@@ -24,16 +24,18 @@ public class test1 {
 	
 int numc = 1;
 int numd = 2;
-int intResult = 0;
+int intResult = numc<numd ? numd:numc ;
+System.out.println(intResult);
 //改行
 	System.out.println("問４");
 //問題4:"nume"と"numf"の変数が両方の正の場合は"both positive"、どちらかの値が正の場合は"one positive"、
 //両方の値が負の場合は"both negative"、それ以外は"etc"と出力するプログラムを三項演算子を用いて作成してください。
 //(String results変数を用いてそこに値を格納しそれを出力する形式でお願いいたします)
 //※※必ず全パターン正常動作することをコンソールで確認して下さい。
-int nume = 4;
-int numf = -3;
-String results = "";
+int nume = 3;
+int numf = -4;
+String results = nume>0 && numf>0 ? "both positive" : nume>0 || numf>0 ? "one positive" : nume<0 && numf<0 ? "both negative" : "etc";
+System.out.println(results);
 	}
 }
 
