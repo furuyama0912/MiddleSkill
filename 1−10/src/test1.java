@@ -47,9 +47,7 @@ public class test1 {
 		//問題5:この配列"nume"を昇順に並び替えて出力しなさい。
 		int[] nume = {6, 2, 8, 1, 9};
 		Arrays.sort(nume);
-		for(int i : nume) {
-            System.out.println(i);
-        }
+		System.out.println(Arrays.toString(nume));
 		
 		//改行
 		System.out.println("問６");
