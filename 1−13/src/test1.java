@@ -15,20 +15,33 @@ public class test1 {
 		List<String> strArray4 = new ArrayList<String>();
 		for(int i = 2; i < strArray1.size(); i++) {
 			strArray2.add(strArray1.get(i));
-			for(int j = 0; j < strArray2.size(); j++) {
-//				String str1 ="k";
-//				String str2 ="a";
-//				String str3 ="o";
-//				if(strArray2.get(j).equals(str1) || strArray2.get(j).equals(str2) || strArray2.get(j).equals(str3))
-				strArray3.add(strArray2.get(j));
-				for(int k = 0; k < strArray3.size(); k++) {
-					strArray4.add(strArray3.get(k));
+			if(strArray2.size()==strArray1.size()-2) {
+				for(int j = 0; j < strArray2.size(); j++) {
+					String str1 ="k";
+					String str2 ="a";
+					String str3 ="o";
+					if(strArray2.get(j).equals(str1) || strArray2.get(j).equals(str2) || strArray2.get(j).equals(str3)) {
+					strArray3.add(strArray2.get(j));
+					}
+					if(strArray3.size() == 6) {
+						for(int k = 0; k < strArray3.size(); k++) {
+							if(k == 4) {
+								continue;
+							}else {
+								strArray4.add(strArray3.get(k));
+
+							}
+						}
+					}
+						
+					
 				}
 			}
+			
 		}
 		System.out.println(strArray2);
 		System.out.println(strArray3);
-		System.out.println(strArray3);
+		System.out.println(strArray4);
 	}
 }
 
