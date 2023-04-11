@@ -78,26 +78,24 @@ public class checkTest {
 		//2.入力された文字列が空文字列の場合（Exceptionが発生する）
 		//3.入力された文字列が整数に変換できない場合（NumberFormatExceptionが発生する）
 //		Scanner scanner = new Scanner(System.in);
-//		String str = scanner.nextLine();
-		Scanner scanner = new Scanner(System.in);
-        try {
-			String string= "金子真也はタイ人です";
-		    int num = Integer.parseInt(string); //NumberFormatException
-		    System.out.println(num);
-            if(scanner == null) {
-                throw new NullPointerException();
-            }else if(scanner=="") {
-            	throw new Exception();
-            }else {
-            	System.out.println(num);
-            }
-        } catch(NullPointerException e) {
-            System.out.println("NullPointerExceptionが発生しました");
-        } catch(Exception e) {
-            System.out.println("Exceptionが発生しました");
-        } catch (NumberFormatException e){
-			System.out.println("NumberFormatExceptionが発生しました");
-		}
+//        try {
+//			String string= "金子真也はタイ人です";
+//		    int num = Integer.parseInt(string); //NumberFormatException
+//		    System.out.println(num);
+//            if(scanner == null) {
+//                throw new NullPointerException();
+//            }else if(scanner=="") {
+//            	throw new Exception();
+//            }else {
+//            	System.out.println(num);
+//            }
+//        } catch(NullPointerException e) {
+//            System.out.println("NullPointerExceptionが発生しました");
+//        } catch(Exception e) {
+//            System.out.println("Exceptionが発生しました");
+//        } catch (NumberFormatException e){
+//			System.out.println("NumberFormatExceptionが発生しました");
+//		}
 		
      	//改行
 		System.out.println("問９");
