@@ -1,0 +1,145 @@
+⚫️課題2−3
+
+
+エビデンス写真を格納してからプッシュしてください。
+例）エビデンス問①
+
+
+①下記テーブルのDMLとDDLの提出及びテーブルスクショをエビデンスとして残すこと
+
+
+CREATE TABLE customers (
+  customer_id int PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  phone VARCHAR(255)
+);
+CREATE TABLE orders (
+  order_id int PRIMARY KEY,
+  customer_id INT,
+  order_date DATE,
+  total DECIMAL(10,2),
+  FOREIGN KEY (customer_id)
+    REFERENCES customers(customer_id)
+);
+CREATE TABLE order_items (
+  order_id int,
+  product_id int,
+  quantity int,
+  price DECIMAL(10,2),
+  PRIMARY KEY(order_id,product_id),
+  FOREIGN KEY (order_id)
+    REFERENCES orders(order_id),
+  FOREIGN KEY (product_id)
+    REFERENCES products(product_id)
+);
+CREATE TABLE products(
+  product_id int PRIMARY KEY,
+  name VARCHAR(255),
+  price DECIMAL(10,2),
+  cotegory VARCHAR(255)
+);
+
+COMMENT ON COLUMN customers.customer_id IS '顧客ID';
+COMMENT ON COLUMN customers.name IS '顧客名';
+COMMENT ON COLUMN customers.email IS 'メールアドレス';
+COMMENT ON COLUMN customers.phone IS '電話番号';
+
+COMMENT ON COLUMN orders.order_id IS '注文ID';
+COMMENT ON COLUMN orders.customer_id IS '顧客ID';
+COMMENT ON COLUMN orders.order_date IS '注文日';
+COMMENT ON COLUMN orders.total IS '合計金額';
+
+COMMENT ON COLUMN order_items.order_id IS '注文ID';
+COMMENT ON COLUMN order_items.product_id IS '製品ID';
+COMMENT ON COLUMN order_items.quantity IS '数量';
+COMMENT ON COLUMN order_items.price IS '価格';
+
+COMMENT ON COLUMN products.product_id IS '製品ID';
+COMMENT ON COLUMN products.name IS '顧客名';
+COMMENT ON COLUMN products.price IS '価格';
+COMMENT ON COLUMN products.cotegory IS 'カテゴリ';
+
+INSERT INTO customers (customer_id, name, email, phone)
+VALUES
+('1','山田太郎', 'yamada@example.com', '012-3456-7890'),
+('2','田中はなこ', 'tanaka@example.com', '090-1234-5678'),
+('3','鈴木次郎', 'suzuki@example.com', '080-8765-4321');
+
+INSERT INTO orders (order_id, customer_id, order_date, total)
+VALUES
+('1','1', '2022/1/1', '160000.00'),
+('2','1', '2022/2/1', '240000.00'),
+('3','2', '2022/3/1', '120000.00'),
+('4','3', '2022/4/1', '100000.00');
+
+INSERT INTO order_items (order_id, product_id, quantity, price)
+VALUES
+(1,1,2,80000.00),
+(2,3,1,200000.00),
+(2,4,1,50000.00),
+(2,5,2,200000.00),
+(3,2,1,120000.00),
+(4,4,2,100000.00);
+
+INSERT INTO products (product_id, name, price, cotegory)
+VALUES
+('1','iPhone12', '80000.00', 'スマートフォン'),
+('2','iPad Pro', '120000.00', 'タブレット'),
+('3','MacBook Pro', '200000.00', 'パソコン'),
+('4','エアコン', '50000.00', '家電'),
+('5','テレビ', '100000.00', '家電');
+
+
+
+誤っているため下記の認識でお願いいたします！！
+※顧製品情報 → 製品情報
+※製品情報（顧客名） → 製品名
+
+
+●ER図（ネットショッピング情報）
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+●格納データ
+
+
+顧客情報テーブル
+
+
+  
+
+注文情報テーブル
+
+
+  
+
+製品情報テーブル
+
+
+  
+
+
+
+
+
+注文アイテムテーブル
