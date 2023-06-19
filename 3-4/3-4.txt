@@ -9,12 +9,22 @@
 ②seviceとserviceimplのうちインターフェースはどちらになりますか？
 serviceimpl
 
+再
+sevice
+
 
 
 ③serveiceに記載するルールは何ですか？
 インターフェースと実装クラスの２種類で構成する
 
+再
+アプリケーションビジネスルール ... システムであるがゆえに発生するビジネスルール
+エンタープライズビジネスルール ... システムに全く関係なく存在している業務上のビジネスルール
+
 
 
 ④何らかのロジカル的な処理を行うプログラミングをしようとする時、コーディングするのに正しいのはどれになりますか？(controller、service、view、seviceimpl、entity、dao、daoimpl)
 service
+
+再
+serviceimpl

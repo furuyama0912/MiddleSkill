@@ -14,3 +14,8 @@ URLごと
 ③@GetMappingと@PostMappingとの違いは何になりますか？
 @RequestMappingは全体の処理の入り口
 @GetMappingは取得の処理を示している入り口
+
+再
+登録する役割とデータを取得する役割が違う
+PostMapping　登録
+GetMapping　取得
