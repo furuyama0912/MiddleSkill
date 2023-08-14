@@ -5,28 +5,16 @@
     <title>My Work - Portfolio</title>
     <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- css -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="css/style.css"> -->
-    <!-- js -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="js/Test.js"></script> -->
-    <!--------------------スライダー見た目-------------------------------------------------->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- スライダー見た目 -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-    <!-------------------------------------------------------------------------------------> 
-
-    <!--------------------jQuery-----------------------------------------------------------> 
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!------------------------------------------------------------------------------------->  
-
-    <!--------------------スライダー動かすやつ----------------------------------------------->  
+    <!-- スライダー動かすやつ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <!-------------------------------------------------------------------------------------> 
 </head>
 
 <body>
@@ -49,14 +37,11 @@
 
     <main>
     <div id="mainvisual">
-        <picture>
-        <source media="(max-width: 600px)" srcset="img/mainvisual-sp.jpg">
-        <ul class="slide-items">
-            <li><img src="img/mainvisual-pc.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/mainvisual-pc.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/mainvisual-pc.jpg" alt="テキストテキストテキスト"></li>
-        </ul>
-        </picture>
+        <div class="slider">   
+            <div><img src="img/mainvisual-pc.jpg" alt="テキストテキストテキスト"></div>
+            <div><img src="img/pikachu.jpg" alt="テキストテキストテキスト"></div>
+            <div><img src="img/gaijin.jpg" alt="テキストテキストテキスト"></div>
+        </div>
     </div>
 
     <section id="about" class="wrapper">
@@ -78,13 +63,22 @@
     <section id="works" class="wrapper">
         <h2 class="sec-title">Works</h2>
         <ul>
-        <li><img src="img/works1.jpg" alt="テキストテキストテキスト"></li>
-        <li><img src="img/works2.jpg" alt="テキストテキストテキスト"></li>
-        <li><img src="img/works3.jpg" alt="テキストテキストテキスト"></li>
-        <li><img src="img/works4.jpg" alt="テキストテキストテキスト"></li>
-        <li><img src="img/works5.jpg" alt="テキストテキストテキスト"></li>
-        <li><img src="img/works6.jpg" alt="テキストテキストテキスト"></li>
+        <li><img src="img/works1.jpg" class="popup"></li>
+        <li><img src="img/works2.jpg" class="popup"></li>
+        <li><img src="img/works3.jpg" class="popup"></li>
+        <li><img src="img/works4.jpg" class="popup"></li>
+        <li><img src="img/works5.jpg" class="popup"></li>
+        <li><img src="img/works6.jpg" class="popup"></li>
         </ul>
+        <!-- <img src="img/works1.jpg" class="popup">
+        <img src="img/works1.jpg" class="popup">
+        <img src="img/works1.jpg" class="popup">
+        <img src="img/works1.jpg" class="popup">
+        <img src="img/works1.jpg" class="popup">
+        <img src="img/works1.jpg" class="popup"> -->
+        <div id="modal-container">
+            <div><img src=""></div>
+        </div>
     </section>
 
     <section id="news" class="wrapper">
@@ -123,6 +117,7 @@
     <p>&copy; 2020 My Work</p>
     </footer>
 
+    <!-- JSファイル読み込み -->
+    <script src="js/Test.js"></script>
 </body>
-
 </html>
