@@ -1,0 +1,91 @@
+⚫️課題5-1～5-5
+【準備】
+①ジップファイルを保存して環境を作って整えてください
+②pom.xmlは使用するDBで自分で切り替えてください
+③下記SQL文を打ち込んで下さい
+
+
+③-1
+CREATE TABLE "user" (
+ id SERIAL NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  address VARCHAR(255),
+  phone VARCHAR(50),
+  update_date TIMESTAMP NOT NULL,
+  create_date TIMESTAMP NOT NULL,
+  delete_date TIMESTAMP,
+ PRIMARY KEY (id)
+);
+
+
+③-2
+INSERT INTO public."user"(
+id, name, address, phone, update_date, create_date)
+VALUES ('1', 'テスト太郎', '東京都サンプル区1-1', '080-0000-0000', '2019-05-06 12:00:00', '2019-05-01 12:00:00');
+
+
+
+
+【課題】
+①
+TemplateInputException
+NumberFormatException
+ClassCastException
+NullPointerException
+IndexOutOfBoundsException
+ArithmeticException
+
+
+6つのエラーが邪魔して機能していないのでCRAD機能とバリデーション、各画面遷移が
+正常に行えるようにしてください
+
+
+
+
+②TemplateInputExceptionの原因と原因箇所と修正内容を説明してください
+View.html
+<head th:replace="common/head :: head_fragment(title = 'ユーザー情報詳細', scripts = ~::script, links = ~{::link})"></head>
+↓
+<head th:replace="common/head :: head_fragment(title = 'ユーザー情報詳細', scripts = ~{::script}, links = ~{::link})"></head>
+Headタグのscriptsの記載方法が違う
+正しく修正して終了
+
+
+
+
+
+③NumberFormatExceptionの原因と原因箇所と修正内容を説明してください
+
+
+
+
+④ClassCastExceptionの原因と原因箇所と修正内容を説明してください
+UserController.java
+Integer logName = (Integer) name;
+NameはInteger型に変換できないのでエラーが発生している
+
+こちらの一文を削除して
+System.out.println("ログ出力：登録ユーザー名は"+logname);
+↓
+System.out.println("ログ出力：登録ユーザー名は"+name);
+に変換して終了
+
+
+
+
+⑤NullPointerExceptionの原因と原因箇所と修正内容を説明してください
+
+
+
+
+⑥IndexOutOfBoundsExceptionの原因と原因箇所と修正内容を説明してください
+UserController.java
+userlists.add(userlist.get(-2));
+↓
+userlists.add(userlist.get(1));
+
+Listのlengthが2に対して-2を引っ張ってきていた為、そのようなインデックスは無いと怒られていた
+
+
+
+⑦ArithmeticExceptionの原因と原因箇所と修正内容を説明してください
